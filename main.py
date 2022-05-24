@@ -94,10 +94,9 @@ class TypeScreen(Screen):
             if not camera.row_enter:
                 self.cursor.pos_hint = KeyboardObjectList[index].pos_hint
                 try:
+                    for button in KeyboardObjectList:
+                        button.color = "lightblue"
                     KeyboardObjectList[index].color = "white"
-                    KeyboardObjectList[index + 1].color = "lightblue"
-                    KeyboardObjectList[index - 1].color = "lightblue"
-                    #AROUND orig color for either direction
                 except IndexError: pass
                 if camera.key_right and index < 29:
                     index += 1
